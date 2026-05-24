@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gold-miner-v1';
+const CACHE_NAME = 'gold-miner-v2';
 
 const ASSETS = [
   'index.html',
