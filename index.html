@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>黄金矿工 - Gold Miner</title>
+  <meta name="description" content="经典黄金矿工游戏 - 抓取金块和钻石，升级装备！">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1a1a2e">
+
+  <!-- iOS PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="黄金矿工">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="apple-touch-startup-image" href="icon.svg">
+
+  <!-- Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="gameContainer">
+    <canvas id="gameCanvas"></canvas>
+    <div id="touchControls">
+      <button id="btnDynamite" class="touch-btn">炸</button>
+      <button id="btnFreeze" class="touch-btn">冻</button>
+    </div>
+  </div>
+
+  <script src="js/constants.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/mineral.js"></script>
+  <script src="js/hook.js"></script>
+  <script src="js/level.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Service Worker -->
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js').then(function(reg) {
+        console.log('SW registered:', reg.scope);
+      }).catch(function(err) {
+        console.log('SW failed:', err);
+      });
+    });
+  }
+  </script>
+</body>
+</html>

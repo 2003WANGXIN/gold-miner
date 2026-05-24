@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a237e"/>
+      <stop offset="100%" stop-color="#0d1b5e"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="40%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </linearGradient>
+    <linearGradient id="gold2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FFA000"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="90" fill="url(#bg)"/>
+
+  <!-- Ground -->
+  <rect x="0" y="340" width="512" height="172" fill="#3E2723" rx="0"/>
+  <rect x="0" y="340" width="512" height="8" fill="#5D4037"/>
+
+  <!-- Large gold nugget (center) -->
+  <circle cx="230" cy="260" r="80" fill="url(#gold)" stroke="#BF8C00" stroke-width="4"/>
+  <ellipse cx="205" cy="235" rx="38" ry="28" fill="rgba(255,255,255,0.3)" transform="rotate(-20 205 235)"/>
+
+  <!-- Medium gold (right) -->
+  <circle cx="360" cy="310" r="52" fill="url(#gold2)" stroke="#BF8C00" stroke-width="3"/>
+  <ellipse cx="345" cy="295" rx="24" ry="16" fill="rgba(255,255,255,0.3)" transform="rotate(-15 345 295)"/>
+
+  <!-- Small gold (bottom left) -->
+  <circle cx="100" cy="370" r="35" fill="url(#gold)" stroke="#BF8C00" stroke-width="3"/>
+  <ellipse cx="90" cy="360" rx="15" ry="10" fill="rgba(255,255,255,0.3)" transform="rotate(-25 90 360)"/>
+
+  <!-- Diamond (top right) -->
+  <g transform="translate(380, 180)">
+    <rect x="-28" y="-28" width="56" height="56" rx="8" fill="#00E5FF" stroke="#00ACC1" stroke-width="3" transform="rotate(45)"/>
+    <rect x="-10" y="-10" width="20" height="20" rx="2" fill="rgba(255,255,255,0.7)" transform="rotate(45)"/>
+  </g>
+
+  <!-- Hook/claw line -->
+  <line x1="256" y1="60" x2="225" y2="250" stroke="#8D6E63" stroke-width="6" stroke-linecap="round"/>
+  <line x1="256" y1="60" x2="380" y2="175" stroke="#8D6E63" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Hook tip -->
+  <circle cx="225" cy="250" r="10" fill="#757575"/>
+  <line x1="225" y1="250" x2="210" y2="268" stroke="#888" stroke-width="5" stroke-linecap="round"/>
+  <line x1="225" y1="250" x2="240" y2="268" stroke="#888" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Pulley -->
+  <circle cx="256" cy="60" r="22" fill="#555" stroke="#333" stroke-width="3"/>
+  <circle cx="256" cy="60" r="8" fill="#333"/>
+
+  <!-- "G" logo text -->
+  <text x="256" y="472" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="48" fill="#FFD700" letter-spacing="4">GOLD</text>
+</svg>
