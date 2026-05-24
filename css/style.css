@@ -36,10 +36,6 @@ canvas {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   display: block;
-  max-width: 100vw;
-  max-height: calc(100vh - 60px);
-  aspect-ratio: 800 / 600;
-  object-fit: contain;
 }
 
 #touchControls {
@@ -95,9 +91,6 @@ canvas {
   #touchControls {
     display: none;
   }
-  canvas {
-    max-height: 100vh;
-  }
 }
 
 /* Landscape mobile: overlay buttons on canvas corners */
@@ -109,8 +102,5 @@ canvas {
     height: auto;
     width: auto;
     z-index: 10;
-  }
-  canvas {
-    max-height: 100vh;
   }
 }

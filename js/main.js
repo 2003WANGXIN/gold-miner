@@ -298,11 +298,43 @@ function updateTouchButtons() {
   }
 }
 
+function resizeCanvas() {
+  const hasTouchControls = window.matchMedia('(pointer: coarse)').matches;
+  const isLandscape = window.innerWidth > window.innerHeight;
+
+  let availW = window.innerWidth;
+  let availH = window.innerHeight;
+
+  // Reserve space for touch buttons on mobile portrait
+  if (hasTouchControls && !isLandscape) {
+    availH -= 60;
+  }
+
+  const ratio = CANVAS_WIDTH / CANVAS_HEIGHT;
+  let w, h;
+  if (availW / availH > ratio) {
+    h = availH;
+    w = h * ratio;
+  } else {
+    w = availW;
+    h = w / ratio;
+  }
+
+  canvas.style.width = Math.floor(w) + 'px';
+  canvas.style.height = Math.floor(h) + 'px';
+}
+
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('orientationchange', function () {
+  setTimeout(resizeCanvas, 100);
+});
+
 // ---- Bootstrap ----
 
 function start() {
   canvas.width = CANVAS_WIDTH;
   canvas.height = CANVAS_HEIGHT;
+  resizeCanvas();
   setupInput(canvas);
   initGame();
   lastTimestamp = performance.now();
